@@ -1,6 +1,6 @@
 #Huawei devices don't declare fingerprint and telephony hardware feature
 #TODO: Proper detection
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
@@ -30,6 +30,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 	persist.sys.usb.config=adb \
 	ro.cust.cdrom=/dev/null	
+
+#Speedup stuff
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.image-dex2oat-filter=verify-none
 
 #VNDK config files
 PRODUCT_COPY_FILES += \
