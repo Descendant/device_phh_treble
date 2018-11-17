@@ -14,7 +14,7 @@ if ( getprop ro.hardware | grep -qE '(kirin970|hi3660|hi6250|hi3670)' );then
 	FOUND_HUAWEI=1
 	setprop persist.sys.bt_acl_bypass true
 	setprop persist.sys.camera.huawei true
-	setprop persist.sys.radio.huawei true
+	setprop persist.sys.radio.ussd.fix true
 fi
 
 if getprop ro.vendor.build.fingerprint |grep -qiE '(huawei|honor|hi3660)' || [ -n "$FOUND_HUAWEI" ];then
@@ -32,3 +32,6 @@ if getprop ro.hardware |grep -qiE -e qcom -e judyln;then
 	setprop persist.sys.overlay.devinputjack true
 fi
 
+if getprop Build.BRAND  | grep -qiE -e MTK;then
+   setprop persist.sys.radio.ussd.fix true
+fi
