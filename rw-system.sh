@@ -215,3 +215,7 @@ if getprop ro.vendor.build.fingerprint | grep -qE -e ".*(crown|star)[q2]*lte.*" 
 fi
 
 mount -o bind /mnt/phh/empty_dir /vendor/etc/audio || true
+
+#let's try to keep BasicIntegrity
+sed 's/ORANGE/GREEN/i' /proc/cmdline | sed 's/YELLOW/GREEN/i' > /data/local/tmp/cmdline && mount -o bind /data/local/tmp/cmdline /proc/cmdline
+
