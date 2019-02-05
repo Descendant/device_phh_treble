@@ -126,3 +126,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	Stk
+
+# Offline charging for Huawei
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/phh/treble/huawei_charger,system/etc/charger)
