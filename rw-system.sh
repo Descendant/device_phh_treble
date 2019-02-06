@@ -232,6 +232,12 @@ if getprop ro.product.model |grep -qF ANE;then
 	setprop debug.sf.latch_unsignaled 1
 fi
 
+if ! grep vendor.huawei.hardware.nfc /vendor/manifest.xml;then
+    mount -o bind system/phh/empty /system/etc/permissions/android.hardware.nfc.hce.xml
+    mount -o bind system/phh/empty /system/etc/permissions/android.hardware.nfc.xml
+    mount -o bind system/phh/empty /system/etc/permissions/com.android.nfc_extras.xml
+fi
+
 if getprop ro.vendor.build.fingerprint |grep -iq -E -e 'huawei|honor' || getprop persist.sys.overlay.huawei |grep -iq -E -e 'true' ; then
 	p=/product/etc/nfc/libnfc_nxp_*_*.conf
 	mount -o bind "$p" /system/etc/libnfc-nxp.conf || \
