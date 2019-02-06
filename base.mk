@@ -49,6 +49,12 @@ PRODUCT_COPY_FILES += \
 	device/phh/treble/nfc/libnfc-nci.conf:system/phh/libnfc-nci-oreo.conf \
 	device/phh/treble/nfc/libnfc-nci-huawei.conf:system/phh/libnfc-nci-huawei.conf
 
+# Provide PRA NFC configs
+PRODUCT_COPY_FILES += \
+    device/phh/treble/nfc/libnfc-nci-PRA.conf:system/phh/libnfc-nci-PRA.conf \
+    device/phh/treble/nfc/libnfc-nxp-PRA.conf:system/phh/libnfc-nxp-PRA.conf \
+    device/phh/treble/nfc/libnfc-brcm.conf:system/phh/libnfc-brcm.conf
+
 # Provide NFC perms in system/phh/permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
