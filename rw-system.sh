@@ -282,3 +282,7 @@ if getprop ro.vendor.build.fingerprint | grep -qE '^xiaomi/daisy/daisy_sprout:8.
 fi
 
 mount -o bind /mnt/phh/empty_dir /vendor/etc/audio || true
+
+if getprop ro.bootimage.build.fingerprint | grep cheryl;then
+    ln -s system/etc /etc
+fi
