@@ -49,6 +49,12 @@ PRODUCT_COPY_FILES += \
 	device/phh/treble/nfc/libnfc-nci.conf:system/phh/libnfc-nci-oreo.conf \
 	device/phh/treble/nfc/libnfc-nci-huawei.conf:system/phh/libnfc-nci-huawei.conf
 
+# Provide NFC perms in system/phh/permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/nfc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/nfc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/nfc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+
 # LineageOS build may need this to make NFC work
 PRODUCT_PACKAGES += \
         NfcNci  
