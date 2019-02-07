@@ -238,13 +238,13 @@ if ! grep vendor.huawei.hardware.nfc /vendor/manifest.xml;then
     mount -o bind system/phh/empty /system/etc/permissions/com.android.nfc_extras.xml
     if getprop ro.vendor.build.fingerprint | ! grep -iq -e PRA;then
         mount -o bind system/phh/empty /system/etc/libnfc-brcm.conf
+        mount -o bind system/phh/empty /system/etc/libnfc-nxp.conf
     fi
 fi
 
 if getprop ro.vendor.build.fingerprint |grep -iq -E -e 'huawei|honor' || getprop persist.sys.overlay.huawei |grep -iq -E -e 'true' ; then
     if getprop ro.vendor.build.fingerprint | grep -iq -e PRA;then
         mount -o bind /system/phh/libnfc-nci-PRA.conf /system/etc/libnfc-nci.conf
-        mount -o bind /system/phh/libnfc-nxp-PRA.conf /system/etc/libnfc-nxp.conf
     else
 	p=/product/etc/nfc/libnfc_nxp_*_*.conf
 	mount -o bind "$p" /system/etc/libnfc-nxp.conf || \

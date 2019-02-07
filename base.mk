@@ -52,8 +52,8 @@ PRODUCT_COPY_FILES += \
 # Provide PRA NFC configs
 PRODUCT_COPY_FILES += \
     device/phh/treble/nfc/libnfc-nci-PRA.conf:system/phh/libnfc-nci-PRA.conf \
-    device/phh/treble/nfc/libnfc-nxp-PRA.conf:system/phh/libnfc-nxp-PRA.conf \
-    device/phh/treble/nfc/libnfc-brcm.conf:system/phh/libnfc-brcm.conf
+    device/phh/treble/nfc/libnfc-nxp-PRA.conf:system/etc/libnfc-nxp.conf \
+    device/phh/treble/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
 # Provide NFC perms in system/phh/permissions
 PRODUCT_COPY_FILES += \
