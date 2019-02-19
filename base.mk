@@ -49,6 +49,18 @@ PRODUCT_COPY_FILES += \
 	device/phh/treble/nfc/libnfc-nci.conf:system/phh/libnfc-nci-oreo.conf \
 	device/phh/treble/nfc/libnfc-nci-huawei.conf:system/phh/libnfc-nci-huawei.conf
 
+# Huawei HWC
+PRODUCT_COPY_FILES += \
+    device/phh/treble/huawei_hwc/android.hardware.graphics.composer@2.2-service:system/huawei_hwc/android.hardware.graphics.composer@2.2-service \
+    device/phh/treble/huawei_hwc/hwcomposer.kirin970.so:system/huawei_hwc/hwcomposer.kirin970.so \
+    device/phh/treble/huawei_hwc/libhidltransport.so:system/huawei_hwc/libhidltransport.so \
+    device/phh/treble/huawei_hwc/libhwc2onfbadapter.so:system/huawei_hwc/libhwc2onfbadapter.so \
+    device/phh/treble/huawei_hwc/libperfgenius_vendor_client.so:system/huawei_hwc/libperfgenius_vendor_client.so \
+    device/phh/treble/huawei_hwc/vendor.huawei.hardware.graphics.displayeffect@1.0.so:system/huawei_hwc/vendor.huawei.hardware.graphics.displayeffect@1.0.so \
+    device/phh/treble/huawei_hwc/vendor.huawei.hardware.graphics.displayeffect@1.1.so:system/huawei_hwc/vendor.huawei.hardware.graphics.displayeffect@1.1.so \
+    device/phh/treble/huawei_hwc/vendor.huawei.hardware.graphics.displayeffect@1.2.so:system/huawei_hwc/vendor.huawei.hardware.graphics.displayeffect@1.2.so \
+    device/phh/treble/huawei_hwc/vendor.huawei.hardware.perfgenius@2.0.so:system/huawei_hwc/vendor.huawei.hardware.perfgenius@2.0.so
+
 # LineageOS build may need this to make NFC work
 PRODUCT_PACKAGES += \
         NfcNci  
@@ -59,6 +71,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/phh/treble/empty:system/phh/empty \
+    device/phh/treble/huawei_hwc/huawei_hwc.sh:system/bin/huawei_hwc.sh \
 	device/phh/treble/phh-on-boot.sh:system/bin/phh-on-boot.sh
 
 PRODUCT_PACKAGES += \
